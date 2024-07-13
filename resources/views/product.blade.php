@@ -15,6 +15,7 @@
                 <th>Qty</th>
                 <th>Price</th>
                 <th>Description</th>
+                <th>Edit</th>		//*** Edit button
             </tr>
             <!-- take data all using "foreach loop"  and show the data-->
             @foreach ($products as $product)   
@@ -24,6 +25,9 @@
                     <td>{{$product->qty}}</td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->discription}}</td>
+                    <td>
+                        <a href="{{route('product.edit', ['product' => $product])}}">Edit</a>		
+                    </td>
                 </tr>
             @endforeach
         </table>
