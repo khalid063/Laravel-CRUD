@@ -9,7 +9,8 @@ class ProductController extends Controller
 {
     //
     public  function index(){
-        return view('product');
+        $products = Product::all();  // "Product" it is the Model name for connect to the database
+        return view('product', ['products' => $products]);
     }
 
     public  function create(){
